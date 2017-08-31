@@ -1,0 +1,16 @@
+{
+    "name": "asset-add-hash",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+        "build": "gulp build"
+    },
+    "author": "wzc0x0@gmail.com",
+    "license": "ISC",
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-asset-rev": "0.0.15",
+        "gulp-clean": "^0.3.2"
+    }
+}
