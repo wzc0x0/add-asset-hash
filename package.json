@@ -1,16 +1,30 @@
 {
-    "name": "asset-add-hash",
+    "name": "xfqz_h5",
     "version": "1.0.0",
     "description": "",
-    "main": "gulpfile.js",
+    "main": "index.js",
     "scripts": {
-        "build": "gulp build"
+        "build": "gulp build",
+        "dev": "gulp dev",
+        "zip": "gulp zip"
     },
-    "author": "wzc0x0@gmail.com",
+    "repository": {
+        "type": "git",
+        "url": "http://192.168.188.38/H5/xfqz_h5.git"
+    },
+    "author": "wzc0x0<wzc0x0@gmail.com>",
     "license": "ISC",
     "devDependencies": {
+        "browser-sync": "^2.18.13",
         "gulp": "^3.9.1",
-        "gulp-asset-rev": "0.0.15",
-        "gulp-clean": "^0.3.2"
+        "gulp-asset-time": "^1.0.0",
+        "gulp-clean": "^0.3.2",
+        "gulp-clean-css": "^3.9.0",
+        "gulp-htmlmin": "^3.0.0",
+        "gulp-image": "^3.0.0",
+        "gulp-pngquant": "^1.0.11",
+        "gulp-uglify": "^3.0.0",
+        "gulp-watch": "^4.3.11",
+        "gulp-zip": "^4.0.0"
     }
 }

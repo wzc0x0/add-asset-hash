@@ -1,0 +1,7 @@
+image/2DetailPage/line_fengxian1.png
+.idea
+/node_modules/
+/.project
+/npm-debug.*
+/dist
+/*.zip
