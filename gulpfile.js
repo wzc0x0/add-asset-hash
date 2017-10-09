@@ -53,7 +53,7 @@ gulp.task('js-min', ['copy-file-to-dist'], function(cb) {
 //对dist目录下的所有css文件里面的引用的（img）添加md5值
 gulp.task('css-rev', ['js-min'], function() {
     return gulp.src(['./dist/**/*.css'])
-        .pipe(cssmin())
+        .pipe(cssmin({ rebase: false })) // not modify css url relative path to root path
         .pipe(assetRev())
         .pipe(gulp.dest('./dist/'));
 });
