@@ -12,7 +12,7 @@
         "type": "git",
         "url": "http://192.168.188.38/H5/xfqz_h5.git"
     },
-    "author": "wzc0x0<wzc0x0@gmail.com>",
+    "author": "",
     "license": "ISC",
     "devDependencies": {
         "browser-sync": "^2.18.13",
@@ -25,6 +25,7 @@
         "gulp-pngquant": "^1.0.11",
         "gulp-uglify": "^3.0.0",
         "gulp-watch": "^4.3.11",
-        "gulp-zip": "^4.0.0"
+        "gulp-zip": "^4.0.0",
+        "pump": "^1.0.2"
     }
 }

@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     jsmin = require('gulp-uglify'),
     zip = require('gulp-zip'),
+    pump = require('pump'),
     options = {
         removeComments: true, //清除HTML注释
         collapseWhitespace: true, //压缩HTML
@@ -26,15 +27,27 @@ gulp.task('clear-dist-dir', function() {
 
 //拷贝项目所有源文件到dist目录下，并排除node_modules, gulpfile.js, package.json, README.md这些目录和文件
 gulp.task('copy-file-to-dist', ['clear-dist-dir'], function() {
-    return gulp.src(['./**/*.*', '!./node_modules/**/*.*', '!./gulpfile.js', '!./*.json', '!./yarn.lock', '!./README.md'])
+    return gulp.src(['./**/*.*',
+            '!./node_modules/**/*.*',
+            '!./gulpfile.js',
+            '!./*.json',
+            '!./*.zip',
+            '!./yarn.lock',
+            '!./README.md'
+        ])
         .pipe(gulp.dest('./dist'));
 });
 
 //对dist目录下的所有js文件进行压缩
-gulp.task('js-min', ['copy-file-to-dist'], function() {
-    return gulp.src(['./dist/**/*.js'])
-        .pipe(jsmin())
-        .pipe(gulp.dest('./dist/'))
+gulp.task('js-min', ['copy-file-to-dist'], function(cb) {
+    //return gulp.src(['./dist/**/*.js'])
+    //    .pipe(jsmin())
+    //    .pipe(gulp.dest('./dist/'))
+    pump([
+        gulp.src('./dist/**/*.js'),
+        jsmin(),
+        gulp.dest('./dist/')
+    ], cb)
 })
 
 //对dist目录下的所有css文件里面的引用的（img）添加md5值
